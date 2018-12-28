@@ -24,7 +24,7 @@ public:
 	int getAutoId();
 	//获取当前数组首地址
 	CBase ** getArray();
-private:
+protected:
 	//存储所有对象的数组 指针数组,每个数组元素是对象的地址，所有子类的指针都可以赋值给父类指针
 	CBase * m_array[MAX_COUNT];
 	int m_count;//有多少个有效元素

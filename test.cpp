@@ -1,5 +1,7 @@
 #include "test.h"
 #include "CBaseManager.h"
+#include "CTeacher.h"
+#include "CTeacherManager.h"
 #include"stdio.h"
 void testCBase() {
 	CBase  *p = new CBase;
@@ -44,4 +46,28 @@ void testCBase() {
 
 	printf("剩余元素个数:%d\n",baseMgr.getElemCount());
 
+}
+
+void testTeacher() {
+	
+	CTeacher *pT = new CTeacher();
+	pT->setAge(23);
+	pT->setExperience(12);
+	pT->SetId(1);
+	pT->SetName("一号老师");
+	pT->setSex('F');
+	CTeacher *pT1 = new CTeacher();
+	pT1->setAge(23);
+	pT1->setExperience(12);
+	pT1->SetId(2);
+	pT1->SetName("二号老师");
+	pT1->setSex('F');
+	CTeacherManager teaMgr;
+	teaMgr.Add(pT);
+	teaMgr.Add(pT1);
+	printf("剩余元素个数:%d\n", teaMgr.getElemCount());
+	bool ret = teaMgr.Del(1);
+	printf("剩余元素个数:%d\n", teaMgr.getElemCount());
+	ret = teaMgr.Del(2);
+	printf("剩余元素个数:%d\n", teaMgr.getElemCount());
 }
